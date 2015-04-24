@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hcl.mail</groupId>
-	<artifactId>HCLScheduler</artifactId>
+	<artifactId>EmailScheduler</artifactId>
 	<packaging>jar</packaging>
 	<version>1.1-SNAPSHOT</version>
 	<name>HCLScheduler</name>
@@ -27,9 +27,15 @@
 		</dependency>
 
 	</dependencies>
+	<scm>
+		<url>https://github.com/ravindrarjpt9/EmailScheduler.git</url>
+		<connection>scm:git:git://github.com/ravindrarjpt9/EmailScheduler.git</connection>
+		<developerConnection>scm:git:git@github.com:ravindrarjpt9/EmailScheduler.git</developerConnection>
+
+	</scm>
 
 	<build>
-		<finalName>HCLScheduler</finalName>
+		<finalName>EmailScheduler</finalName>
 		<plugins>
 			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> 
 				<version>2.3.2</version> <configuration> <source>1.6</source> <target>1.6</target> 
@@ -72,9 +78,21 @@
 				</executions>
 			</plugin>
 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.2</version>
+				<configuration>
+					<!-- During release:perform, enable the "release" profile -->
+					<releaseProfiles>release</releaseProfiles>
+				</configuration>
+			</plugin>
+
+
+
 		</plugins>
 	</build>
 	<properties>
-    <maven.test.skip>true</maven.test.skip>
+		<maven.test.skip>true</maven.test.skip>
 	</properties>
 </project>
